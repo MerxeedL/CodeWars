@@ -1,4 +1,4 @@
-package Katas5.SimplePigPlatin;
+package Kuy5.SimplePigPlatin;
 
 import java.util.Arrays;
 import java.util.regex.Pattern;

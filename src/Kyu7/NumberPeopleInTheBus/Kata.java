@@ -1,10 +1,6 @@
-package Katas7.NumberPeopleInTheBus;
-
-import org.w3c.dom.ls.LSOutput;
+package Kyu7.NumberPeopleInTheBus;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
 
 public class Kata {
 

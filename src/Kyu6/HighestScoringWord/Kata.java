@@ -1,4 +1,4 @@
-package Katas6.HighestScoringWord;
+package Kyu6.HighestScoringWord;
 
 import java.util.Arrays;
 import java.util.Comparator;

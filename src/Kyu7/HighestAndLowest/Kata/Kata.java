@@ -1,4 +1,4 @@
-package Katas7.HighestAndLowest.Kata;
+package Kyu7.HighestAndLowest.Kata;
 
 import java.util.Arrays;
 import java.util.IntSummaryStatistics;

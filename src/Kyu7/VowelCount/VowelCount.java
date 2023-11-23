@@ -1,4 +1,4 @@
-package Katas7.VowelCount;
+package Kyu7.VowelCount;
 
 import java.util.ArrayList;
 

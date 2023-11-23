@@ -1,6 +1,4 @@
-package Katas7.ComplementaryDNA;
-
-import java.util.Arrays;
+package Kyu7.ComplementaryDNA;
 
 public class Kata {
 

@@ -1,4 +1,4 @@
-package Katas7.DisemvowelTrolls;
+package Kyu7.DisemvowelTrolls;
 
 public class Troll {
 

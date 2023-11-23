@@ -1,4 +1,4 @@
-package Katas7.FindTheNextPerfectSquare;
+package Kyu7.FindTheNextPerfectSquare;
 
 public class Kata {
 

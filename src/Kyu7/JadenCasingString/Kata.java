@@ -1,7 +1,4 @@
-package Katas7.JadenCasingString;
-
-import java.util.ArrayList;
-import java.util.Arrays;
+package Kyu7.JadenCasingString;
 
 public class Kata {
 

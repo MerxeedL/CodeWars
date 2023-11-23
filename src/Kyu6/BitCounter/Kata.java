@@ -1,6 +1,4 @@
-package Katas6.BitCounter;
-
-import java.util.Arrays;
+package Kyu6.BitCounter;
 
 public class Kata {
 
