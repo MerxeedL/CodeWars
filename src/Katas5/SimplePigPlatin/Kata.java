@@ -1,6 +1,7 @@
 package Katas5.SimplePigPlatin;
 
 import java.util.Arrays;
+import java.util.regex.Pattern;
 
 public class Kata {
 
@@ -12,19 +13,23 @@ public class Kata {
 
     public static String pigIt(String str) {
 
-        for (int i = 0; i < str.length(); i++) {
-            char[] values = new char[]{str.charAt(i)};
-
-            if (str.contains(" ") | str.contains(",") | str.contains(".")) {
-                str = str.replace(".", "");
-                str = str.replace(",", "");
-            }
-            System.out.println(values);
+        if (str == null || str.isEmpty()) {
+            return null;
         }
 
+        final String[] words = str.split("\\s");
+        final StringBuilder sb = new StringBuilder();
 
-
-        return str;
+        for (String s : words)
+            if (Pattern.matches("\\p{IsPunctuation}", s)) {
+                sb.append(s).append(" ");
+            } else {
+                sb.append(s.substring(1)).append(s.charAt(0)).append("ay ");
+            }
+        while (sb.charAt(sb.length()-1) == ' ') {
+            sb.setLength(sb.length()-1);
+        }
+        return new String(sb);
     }
-
 }
+
