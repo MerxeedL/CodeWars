@@ -1,5 +1,6 @@
 package Kyu6.DeadFish;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Kata {
@@ -11,10 +12,7 @@ public class Kata {
     public static int[] parse(String data) {
 
         double value = 0;
-        int[] endpoint = new int[0];
-        int[] secondpoint = new int[endpoint.length + 1];
-        int[] endvalue = new int[secondpoint.length + 1];
-        String testzxc = null;
+        ArrayList<Integer> list = new ArrayList<>();
 
         char[] test = data.toCharArray();
 
@@ -26,16 +24,9 @@ public class Kata {
             } else if (test[j] == 's') {
                 value = Math.pow(value, 2);
             } else if (test[j] == 'o') {
-                System.out.println((int) value);
-                secondpoint[secondpoint.length - 1] = (int) value;
+                list.add((int) value);
             }
-
-            for (int i = 0; i < secondpoint.length - 1; i++) {
-              endvalue[i] = (int) value;
-                //System.out.println(Arrays.toString(endvalue));
-            }
-
         }
-        return secondpoint;
+        return list.stream().mapToInt(i -> i).toArray();
     }
 }
