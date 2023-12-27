@@ -14,30 +14,30 @@ public class Kata {
         final char[] english = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
                 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x',
                 'y', 'z', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0',
-                ',', '.', '?'};
+                ',', '.', '?', '!'};
 
         final String[] morse = {".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....", "..",
                 ".---", "-.-", ".-..", "--", "-.", "---", ".---.", "--.-", ".-.",
                 "...", "-", "..-", "...-", ".--", "-..-", "-.--", "--..", ".----",
                 "..---", "...--", "....-", ".....", "-....", "--...", "---..", "----.", "-----",
-                "--..--", ".-.-.-", "..--.."};
+                "--..--", ".-.-.-", "..--..", "--..--"};
 
-        String[] letters = morseCode.split(" ");
+        String[] letters = morseCode.split("\\s{3,}");
+        StringBuilder decoderText = new StringBuilder();
 
-        String str = "";
-
-        for (int i = 0; i < letters.length; i++) {
-            for (int j = 0; j < english.length + 2; j++) {
-                if (morseCode.charAt(j - 2) == ' ' && morseCode.charAt(j - 1) == ' '  && morseCode.charAt(j) == ' ') {
-                    english[j] = ' ';
-                } else if (morse[j].equals(letters[i])) {
-                    str += english[j];
-                    break;
+        for(String word : letters) {
+            String[] chars = word.trim().split("\\s+");
+            for(String letter: chars) {
+                for (int j = 0; j < morse.length; j++) {
+                    if(morse[j].equals(letter)) {
+                        decoderText.append(english[j]);
+                        break;
+                    }
                 }
             }
+            decoderText.append(" ");
         }
-        morseCode = str;
-        morseCode = morseCode.toUpperCase();
-        return morseCode;
+
+        return decoderText.toString().toUpperCase().trim();
     }
 }
