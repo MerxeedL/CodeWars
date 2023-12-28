@@ -7,7 +7,7 @@ public class Kata {
 
     public static void main(String[] args) {
 
-        lightOnTraffic("CRRRRYYYYGGGGGGGGGGGGGGGG..........G............................R.........");
+        lightOnTraffic("C..............G............................R.........");
         //System.out.println(Arrays.toString(trafficLights("C...R..........G............................R....", 25)));
 
     }
