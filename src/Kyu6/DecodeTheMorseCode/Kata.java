@@ -1,12 +1,16 @@
 package Kyu6.DecodeTheMorseCode;
 
+import org.junit.Test;
+
 import java.util.Arrays;
+
+import static org.hamcrest.MatcherAssert.assertThat;
 
 public class Kata {
 
 
     public static void main(String[] args) {
-        System.out.println(decode(".... . -.--   .--- ..- -.. ."));
+        System.out.println(decode("...---..."));
     }
 
     public static String decode(String morseCode) {
@@ -20,7 +24,7 @@ public class Kata {
                 ".---", "-.-", ".-..", "--", "-.", "---", ".---.", "--.-", ".-.",
                 "...", "-", "..-", "...-", ".--", "-..-", "-.--", "--..", ".----",
                 "..---", "...--", "....-", ".....", "-....", "--...", "---..", "----.", "-----",
-                "--..--", ".-.-.-", "..--..", "--..--"};
+                "--..--", ".-.-.-", "..--..", "......"};
 
         String[] letters = morseCode.split("\\s{3,}");
         StringBuilder decoderText = new StringBuilder();
