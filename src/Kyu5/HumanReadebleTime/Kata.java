@@ -1,30 +1,38 @@
 package Kyu5.HumanReadebleTime;
 
-import java.text.DecimalFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Kata {
 
-    public static void main(String[] args) {
-        System.out.println(makeReadable(60));
+    public static void main(String[] args) throws ParseException {
+        System.out.println(makeReadable(86399));
     }
+
 
     public static String makeReadable(int seconds) {
 
-        DecimalFormat dF = new DecimalFormat("##");
-        dF.applyPattern("00");
-        int result = 0;
+        int anHourInSeconds = 3600;
+        int aMinuteInSeconds = 60;
 
-        int hrs = seconds / 3600;
-        int valuetestminutes = seconds - hrs * 3600;
-        int minutes = valuetestminutes / 60;
-        int secs = valuetestminutes - (minutes * 60);
+        String hh = Integer.toString(seconds / anHourInSeconds);
+        String mm = Integer.toString((seconds % anHourInSeconds) / aMinuteInSeconds);
+        String ss = Integer.toString(seconds% aMinuteInSeconds);
 
-        Date date = new Date();
+        if(hh.length() == 1) {
+            hh = "0" + hh;
+        }
 
-        String test = System.out.printf("%tH:%tM:%tS", date, date, date).toString();
+        if(mm.length() == 1) {
+            mm = "0" + mm;
+        }
 
-        return test;
+        if(ss.length() == 1) {
+            ss = "0" + ss;
+        }
+
+        return hh + ":" + mm + ":" + ss;
+
     }
-
 }

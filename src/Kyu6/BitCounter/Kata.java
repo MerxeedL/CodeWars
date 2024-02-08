@@ -17,7 +17,7 @@ public class Kata {
 
         for (int i = 0; i < toBinary.length(); i++) {
 
-            if(toBinary.charAt(i) == '1') {
+            if (toBinary.charAt(i) == '1') {
                 value++;
             }
         }
