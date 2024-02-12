@@ -1,60 +1,96 @@
 package Kyu5.GreedIsGood;
 
-import java.util.ArrayList;
+
 import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
 
 public class Kata {
 
 
     public static void main(String[] args) {
-        System.out.println(greedy(new int[]{5, 1, 3, 4, 1}));
+        System.out.println(greedy(new int[]{5, 5, 1, 1, 3}));
     }
 
     public static int greedy(int[] dice) {
 
         int count = 0;
-        final int thousand = 1000;
-        final int sixHundred = 600;
-        final int fiveHundred = 500;
-        final int fourHundred = 400;
-        final int threeHundred = 300;
-        final int twoHundred = 200;
-        final int oneHundred = 100;
-        final int fifty = 50;
+        int countOnes = 0;
+        int countTwos = 0;
+        int countThrees = 0;
+        int countFours = 0;
+        int countFives = 0;
+        int countSixes = 0;
 
         Arrays.sort(dice);
 
-        List<Integer> test = new ArrayList<>();
-
         for (int i = 0; i < dice.length; i++) {
-            for (int j = i + 1; j < dice.length; j++) {
-                for (int k = i + 2; k < dice.length; k++) {
-                    if (dice[i] == dice[j] && dice[j] == dice[k] && !test.contains(dice[i])) {
-                        test.add(dice[i]);
-                        if (dice[i] == 1) {
-                            count += thousand;
-                        } else if (dice[i] == 2) {
-                            count += twoHundred;
-                        } else if (dice[i] == 3) {
-                            count += threeHundred;
-                        } else if (dice[i] == 4) {
-                            count += fourHundred;
-                        } else if (dice[i] == 5) {
-                            count += fiveHundred;
-                        } else if (dice[i] == 6) {
-                            count += sixHundred;
-                        }
-                    }
-                }
-            }
             if (dice[i] == 1) {
-                count += oneHundred;
+                countOnes++;
+            } else if (dice[i] == 2) {
+                countTwos++;
+            } else if (dice[i] == 3) {
+                countThrees++;
+            } else if (dice[i] == 4) {
+                countFours++;
             } else if (dice[i] == 5) {
-                count += fifty;
+                countFives++;
+            } else if (dice[i] == 6) {
+                countSixes++;
             }
         }
+
+        if (countOnes == 4) {
+            count += 1100;
+        } else if (countOnes == 5) {
+            count += 1200;
+        } else if (countOnes == 3) {
+            count += 1000;
+        } else if (countOnes == 1) {
+            count += 100;
+        } else if (countOnes == 2) {
+            count += 200;
+        }
+
+        if (countFives == 1) {
+            count += 50;
+        } else if (countFives == 2) {
+            count += 100;
+        } else if (countFives == 3) {
+            count += 500;
+        }
+
+        if (countTwos == 3) {
+            count += 200;
+        } else if (countThrees == 3) {
+            count += 300;
+        } else if (countFours == 3) {
+            count += 400;
+        } else if (countSixes == 3) {
+            count += 600;
+        }
+
+        if (countTwos == 4) {
+            count += 200;
+        } else if (countThrees == 4) {
+            count += 300;
+        } else if (countFours == 4) {
+            count += 400;
+        } else if (countFives == 4) {
+            count += 550;
+        } else if (countSixes == 4) {
+            count += 600;
+        }
+
+        if (countTwos == 5) {
+            count += 200;
+        } else if (countThrees == 5) {
+            count += 300;
+        } else if (countFours == 5) {
+            count += 400;
+        } else if (countSixes == 5) {
+            count += 600;
+        }
+
         return count;
+
     }
 }
