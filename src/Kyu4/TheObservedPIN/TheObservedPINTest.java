@@ -7,7 +7,7 @@ import java.util.List;
 public class TheObservedPINTest {
 
     public static void main(String[] args) {
-        System.out.println(getPINTs("02"));
+        System.out.println(getPINTs("1"));
     }
 
     public static List<String> getPINTs(String observed) {
